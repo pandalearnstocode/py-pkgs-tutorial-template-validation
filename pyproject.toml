@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py_pkgs_tutorial"
-version = "0.1.0"
+version = "0.1.1"
 description = "A package for doing great things!"
 authors = ["AB"]
 license = "MIT"
