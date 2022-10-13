@@ -4,7 +4,7 @@ jobs:
   pr_title:
     name: Validate PR title
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.head_ref == 'master'
+    if: github.event_name == 'pull_request'
     steps:
       - name: Validate Pull Request
         uses: amannn/action-semantic-pull-request@v5
@@ -54,7 +54,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   create_label:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.head_ref == 'master'
+    if: github.event_name == 'pull_request'
     needs: pr_title
     permissions:
       contents: read
@@ -68,7 +68,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   ci:
-    if: github.event_name == 'pull_request' && github.head_ref == 'master'
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Install system level libraries
